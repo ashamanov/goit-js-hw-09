@@ -45,11 +45,12 @@ function timerStart() {
     if (getObj() === 0) {
       clearInterval(timerId);
     }
+    return;
   }, 1000);
 }
 
 function getObj() {
-  const timeObj = convertMs(addedDate - new Date());
+  const timeObj = convertMs(chosenDate - new Date());
   const dayMs = timeObj.days * 24 * 60 * 60 * 1000;
   const hourMs = timeObj.hours * 60 * 60 * 1000;
   const minutesMs = timeObj.minutes * 60 * 1000;
@@ -58,7 +59,6 @@ function getObj() {
 
   return timeMs;
 }
-
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
